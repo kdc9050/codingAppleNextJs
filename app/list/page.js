@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function List() {
-  let Products = ["토마토", "파스타", "코코넛"];
+  let Products = ["토마토", "파스타", "코코넛", "피자"];
   let [counts, setCounts] = useState(Array(Products.length).fill(0));
 
   const incrementCount = (index) => {
