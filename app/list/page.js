@@ -1,6 +1,7 @@
 import { connectDB } from "/util/database.js";
 import { ObjectId } from "mongodb";
 import Link from "next/link";
+import DetailLink from "./DetailLink";
 
 export default async function List() {
   let db = (await connectDB).db("forum");
@@ -12,6 +13,7 @@ export default async function List() {
           <Link href={"/detail/" + result[i]._id}>
             <h4>{a.title}</h4>
           </Link>
+          <DetailLink />
           <p>1월 1일</p>
         </div>
       ))}
