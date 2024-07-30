@@ -1,10 +1,14 @@
-import Link from "next/link";
+import { connectDB } from "/util/database.js";
 
-export default function Home() {
+export default async function Home() {
+  let client = await connectDB;
+  const db = client.db("forum");
+  let result = await db.collection("post").find().toArray();
+
   return (
     <main>
-      <h1 className="title">Programming Log</h1>
-      <p className="title-sub">by dev kim</p>
+      {result[0].title}
+      {result[0].content}
     </main>
   );
 }
