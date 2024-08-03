@@ -7,7 +7,7 @@ export default function DetailLink() {
   return (
     <button
       onClick={() => {
-        router.push("/home");
+        router.push("/");
       }}
     >
       버튼
